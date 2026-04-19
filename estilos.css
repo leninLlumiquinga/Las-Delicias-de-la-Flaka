@@ -1,0 +1,609 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    /* Esto evita que aparezcan barras de desplazamiento si algo se sale del ancho */
+    overflow-x: hidden; 
+}
+
+.mi-cabecera {
+  background-color: #cb120f;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #0070d1;
+}
+
+.btn-ingresar {
+  background-color: #f8e300;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ingresar:hover {
+  background-color: #005bb5;
+}
+
+.contenedor-boton-central {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  padding: 55px 0;         /* Espacio arriba y abajo */
+}
+
+.btn-destacado {
+  background-color: #cb120f; /* Color a juego con tu header */
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-destacado:hover {
+  background-color: #a00e0a; /* Un tono más oscuro al pasar el mouse */
+}
+
+body {
+  background-color: #f8e300;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23FFFFFF" fill-opacity="0.5" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,112C960,139,1056,181,1152,176C1248,171,1344,117,1392,90.7L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top;
+  padding-top: 80px; 
+}
+
+.img-logo {
+  height: 50px;
+  width: auto;
+  display: block;
+  border-radius: 15px;
+}
+
+.texto-logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.tarjeta-menu {
+  display: flex;
+  background-color: #cb120f;
+  color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.5);
+  max-width: 1100px;
+  margin: 40px auto;
+  border: 8px solid #cb120f;
+}
+
+.caja-imagen {
+  width: 15%;
+}
+.caja-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.caja-detalles {
+  width: 50%;
+  padding: 15px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nombre-producto {
+  font-size: 24px;
+  color: #f8e300;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #f8e300;
+  padding-bottom: 5px;
+}
+
+.contenedor-opciones {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.opcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(250, 250, 199);
+  padding: 8px 5px;
+  border-radius: 8px;
+  width: 32%;
+}
+
+.tipo {
+  font-size: 14px;
+  color: #cb120f;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.caja-ingredientes {
+  width: 35%;
+  padding: 15px 20px;
+  background-color: #f8e300;
+  border-left: 1px solid #f8e300;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.titulo-ingredientes {
+  font-size: 16px;
+  color: #cb120f;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.lista-ingredientes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.lista-ingredientes li {
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 8px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.lista-ingredientes li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.precio {
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+}
+
+.mi-footer {
+  background-color: #cb120f;
+  color: #fff;
+  padding: 50px 20px 15px;
+  margin-top: 80px;
+  border-top: 5px solid #f8e300;
+}
+
+.footer-contenido {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.footer-info,
+.footer-enlaces,
+.footer-contacto {
+  width: 30%;
+}
+
+.footer-info h3,
+.footer-enlaces h4,
+.footer-contacto h4 {
+  color: #f8e300;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.footer-info p,
+.footer-contacto p {
+  line-height: 1.8;
+  color: #f1f1f1;
+  font-size: 15px;
+}
+
+.footer-enlaces ul {
+  list-style: none;
+}
+.footer-enlaces a {
+  color: #fff;
+  text-decoration: none;
+  line-height: 2;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-enlaces a:hover {
+  color: #f8e300;
+}
+
+.footer-creditos {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  color: #ccc;
+}
+
+.contenedor-productos-individuales {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cuadrado-producto {
+  flex: 0 1 calc(33.333% - 20px);
+  background-color: #cb120f;
+  border: 8 px solid #cb120f;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.cuadrado-producto:hover {
+  transform: scale(1.03);
+}
+
+.imagen-recuadro {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+}
+.imagen-recuadro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detalles-recuadro {
+  padding: 15px;
+  text-align: center;
+  color: #fff;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.ubicacion {
+  width: 400px;
+  height: 400px;
+  max-width: 90vw;
+  max-height: 90vw;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid #e6e0d6;
+}
+
+.ubicacion h2 {
+  color: #b8541a;
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.ubicacion p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.ubicacion .icono {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #b8541a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.nombre-recuadro {
+  font-size: 1.1rem;
+  color: #f8e300;
+  text-transform: uppercase;
+  margin: 0;
+}
+.descripcion-corta {
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.9;
+}
+.precio-recuadro {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 5px;
+}
+
+@media (max-width: 900px) {
+  .cuadrado-producto {
+    flex: 0 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .contenedor-productos-individuales {
+    gap: 10px;
+    padding: 10px;
+  }
+  .cuadrado-producto {
+    flex: 0 1 calc(50% - 10px);
+  }
+  .nombre-recuadro {
+    font-size: 0.9rem;
+  }
+  .precio-recuadro {
+    font-size: 1.1rem;
+  }
+}
+
+.seccion-contacto {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.tarjeta-contacto {
+  display: flex;
+  background: #cb120f;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 1300px;
+  max-height: 400px;
+  gap: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.foto-propietario img {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+   /* Imagen circular */
+}
+
+.info-contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+  color: #fff;
+}
+
+/* Ajuste responsivo para contactos */
+@media (max-width: 900px) {
+  .tarjeta-contacto { 
+    flex-direction: column; 
+    text-align: center; 
+    align-items: center;
+    max-height: none; /* Permite que el contenedor crezca hacia abajo sin cortar el texto */
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 15px;
+  }
+  .foto-propietario img {
+    height: 300px; /* Reducir la imagen en móviles para dar más visibilidad al texto */
+    border-radius: 10px;
+  }
+}
+
+.btn-whatsapp{
+  background-color: #25d366; /* Verde de WhatsApp */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: transform 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.05); /* Efecto pop al pasar el mouse */
+}
+.contenedor-imagen{
+  justify-content: left;
+  align-items: left;
+  margin-top: 30px;
+  margin-left: 30px;
+  width: 450px;
+  height: 450px;
+}
+
+.seccion-inicio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cb120f;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 1100px;
+  margin: 40px auto;
+  gap: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+.seccion-inicio .contenedor-imagen {
+  margin: 0;
+  width: 450px;
+  height: 450px;
+  flex-shrink: 0;
+}
+
+.contenedor-texto-inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contenedor-texto-inicio h2 {
+  font-size: 2.2rem;
+  color: #f8e300;
+  margin: 0;
+  border-bottom: 2px solid #f8e300;
+  padding-bottom: 10px;
+}
+
+.contenedor-texto-inicio p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.img-central{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* Ajustes para evitar que los elementos se salgan de los limites en pantallas pequeñas */
+img {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .mi-cabecera {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 15px;
+  }
+  body {
+    padding-top: 150px; /* Mayor espacio si el navbar ocupa 2 lineas */
+  }
+  .tarjeta-menu {
+    flex-direction: column;
+    margin: 20px 5%;
+    width: 90%;
+  }
+  .caja-imagen, .caja-detalles, .caja-ingredientes {
+    width: 100%;
+    border-left: none;
+  }
+  .caja-imagen {
+    height: 200px;
+  }
+  .contenedor-opciones {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .opcion {
+    width: 45%;
+    margin-bottom: 10px;
+  }
+  .footer-contenido {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-info, .footer-enlaces, .footer-contacto {
+    width: 100%;
+  }
+  .contenedor-imagen {
+    width: 100%;
+    max-width: 450px;
+    margin-left: 0;
+  }
+  /* Responsivo para la nueva seccion de inicio */
+  .seccion-inicio {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .seccion-inicio .contenedor-imagen {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding-top: 200px; /* Si se hace mas alto por el flex wrap */
+  }
+  .logo a {
+    flex-direction: column;
+  }
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .opcion {
+    width: 100%;
+  }
+}
+
+
