@@ -1,4 +1,4 @@
-* {
+﻿* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +9,6 @@ html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    /* Esto evita que aparezcan barras de desplazamiento si algo se sale del ancho */
     overflow-x: hidden; 
 }
 
@@ -68,12 +67,12 @@ html, body {
 
 .contenedor-boton-central {
   display: flex;
-  justify-content: center; /* Centrado horizontal */
-  padding: 55px 0;         /* Espacio arriba y abajo */
+  justify-content: center; 
+  padding: 55px 0;         
 }
 
 .btn-destacado {
-  background-color: #cb120f; /* Color a juego con tu header */
+  background-color: #cb120f; 
   color: white;
   padding: 12px 25px;
   text-decoration: none;
@@ -83,7 +82,7 @@ html, body {
 }
 
 .btn-destacado:hover {
-  background-color: #a00e0a; /* Un tono más oscuro al pasar el mouse */
+  background-color: #a00e0a; 
 }
 
 body {
@@ -428,7 +427,6 @@ body {
   width: 250px;
   height: 350px;
   object-fit: cover;
-   /* Imagen circular */
 }
 
 .info-contacto {
@@ -439,25 +437,24 @@ body {
   color: #fff;
 }
 
-/* Ajuste responsivo para contactos */
 @media (max-width: 900px) {
   .tarjeta-contacto { 
     flex-direction: column; 
     text-align: center; 
     align-items: center;
-    max-height: none; /* Permite que el contenedor crezca hacia abajo sin cortar el texto */
+    max-height: none; 
     width: 90%;
     margin: 0 auto;
     padding: 20px 15px;
   }
   .foto-propietario img {
-    height: 300px; /* Reducir la imagen en móviles para dar más visibilidad al texto */
+    height: 300px; 
     border-radius: 10px;
   }
 }
 
 .btn-whatsapp{
-  background-color: #25d366; /* Verde de WhatsApp */
+  background-color: #25d366; 
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -480,7 +477,7 @@ body {
   height: 450px;
 }
 
-.seccion-inicio {
+.seccion-index {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -494,21 +491,21 @@ body {
   color: #fff;
 }
 
-.seccion-inicio .contenedor-imagen {
+.seccion-index .contenedor-imagen {
   margin: 0;
   width: 450px;
   height: 450px;
   flex-shrink: 0;
 }
 
-.contenedor-texto-inicio {
+.contenedor-texto-index {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
 }
 
-.contenedor-texto-inicio h2 {
+.contenedor-texto-index h2 {
   font-size: 2.2rem;
   color: #f8e300;
   margin: 0;
@@ -516,7 +513,7 @@ body {
   padding-bottom: 10px;
 }
 
-.contenedor-texto-inicio p {
+.contenedor-texto-index p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -528,7 +525,6 @@ body {
   border-radius: 15px;
 }
 
-/* Ajustes para evitar que los elementos se salgan de los limites en pantallas pequeñas */
 img {
   max-width: 100%;
 }
@@ -541,7 +537,7 @@ img {
     gap: 15px;
   }
   body {
-    padding-top: 150px; /* Mayor espacio si el navbar ocupa 2 lineas */
+    padding-top: 150px; 
   }
   .tarjeta-menu {
     flex-direction: column;
@@ -576,13 +572,12 @@ img {
     max-width: 450px;
     margin-left: 0;
   }
-  /* Responsivo para la nueva seccion de inicio */
-  .seccion-inicio {
+  .seccion-index {
     flex-direction: column;
     text-align: center;
     padding: 20px;
   }
-  .seccion-inicio .contenedor-imagen {
+  .seccion-index .contenedor-imagen {
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
@@ -591,7 +586,7 @@ img {
 
 @media (max-width: 600px) {
   body {
-    padding-top: 200px; /* Si se hace mas alto por el flex wrap */
+    padding-top: 200px;
   }
   .logo a {
     flex-direction: column;

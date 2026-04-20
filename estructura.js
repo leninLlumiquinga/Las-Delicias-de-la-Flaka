@@ -98,20 +98,16 @@ const diccionarioEn = {
   "Mañana y Tarde: 8:00 a 18:00": "Morning and Evening: 8:00 AM to 6:00 PM"
 };
 
-// Generar diccionario inverso automáticamente
 const diccionarioEs = {};
 for (const [es, en] of Object.entries(diccionarioEn)) {
   diccionarioEs[en] = es;
 }
-
-// Variables de estado
 let idiomaActual = localStorage.getItem('idioma_flaka') || 'es';
 
 function limpiarTexto(texto) {
   return texto.replace(/\s+/g, ' ').trim();
 }
 
-// Recorrer todo el DOM y reemplazar textos
 function traducirNodo(nodo, idiomaTarget) {
   if (nodo.nodeType === Node.TEXT_NODE) {
     let original = nodo.textContent;
@@ -128,7 +124,6 @@ function traducirNodo(nodo, idiomaTarget) {
       nodo.textContent = inicioSpace + diccionarioEs[limpio] + finalSpace;
     }
   } else if (nodo.nodeType === Node.ELEMENT_NODE) {
-    // Ignorar scripts y estilos
     if (nodo.nodeName !== 'SCRIPT' && nodo.nodeName !== 'STYLE') {
       nodo.childNodes.forEach(hijo => traducirNodo(hijo, idiomaTarget));
     }
@@ -139,24 +134,18 @@ function aplicarIdioma(idioma) {
   traducirNodo(document.body, idioma);
   localStorage.setItem('idioma_flaka', idioma);
   
-  // Ajustar visualmente el botón de cambiar idioma
   document.querySelectorAll('.btn-ingresar').forEach(btn => {
     btn.textContent = idioma === 'en' ? 'Volver a Español' : 'English';
   });
 }
-
-// Cuando carga la pagina
 document.addEventListener('DOMContentLoaded', () => {
   if (idiomaActual === 'en') {
     aplicarIdioma('en');
   } else {
-    // Solo cambiar el texto del boton al default
     document.querySelectorAll('.btn-ingresar').forEach(btn => {
       btn.textContent = 'English';
     });
   }
-
-  // Comportamiento del clic en el boton
   document.querySelectorAll('.btn-ingresar').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
